@@ -8,19 +8,21 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *n;
+	listint_t *c;
 
 	if (!list || !list->next)
 		return (0);
-	n = list->next;
-	while (list != NULL)
+	c = list;
+	while (c != NULL)
 	{
+		n = c->next;
 		while (n != NULL)
 		{
-			if (list == n->next)
+			if (c == n->next)
 				return (1);
 			n = n->next;
 		}
-		list = list->next;
+		c = c->next;
 	}
 	return (0);
 }
