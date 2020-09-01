@@ -14,7 +14,7 @@ int check_cycle(listint_t *list)
 		return (0);
 	tor = list;
 	con = tor->next->next;
-	while (con != NULL)
+	while (con != NULL && con->next)
 	{
 		if (tor == con)
 			return (1);
