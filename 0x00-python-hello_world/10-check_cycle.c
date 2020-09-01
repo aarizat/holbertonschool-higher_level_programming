@@ -7,22 +7,19 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *n;
-	listint_t *c;
+	listint_t *tor;
+	listint_t *con;
 
 	if (!list || !list->next)
 		return (0);
-	c = list;
-	n = c->next;
-	while (c != NULL)
+	tor = list;
+	con = tor->next->next;
+	while (con != NULL)
 	{
-		while (n != NULL)
-		{
-			if (c == n->next)
-				return (1);
-			n = n->next;
-		}
-		c = c->next;
+		if (tor == con)
+			return (1);
+		tor = tor->next;
+		con = con->next->next;
 	}
 	return (0);
 }
