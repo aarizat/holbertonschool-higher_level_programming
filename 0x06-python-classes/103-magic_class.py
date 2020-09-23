@@ -10,7 +10,7 @@ class MagicClass:
     """
     Magic class from bytecode python
     """
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         """ Initialize attributes
         """
         self.__radius = 0
