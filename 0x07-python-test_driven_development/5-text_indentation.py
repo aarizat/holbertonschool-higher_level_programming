@@ -16,21 +16,14 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    nb_prev = nb_curr = 0
-    for ch in text:
-        nb_curr += 1
-        if ch in (".", "?", ":"):
-            line = text[nb_prev:nb_curr+1]
-            c = 0
-            for i in line:
-                if i != " ":
-                    break
-                c += 1
-            b = 1
-            for j in line[::-1]:
-                if j != " ":
-                    break
-                b += 1
-            print(line[c:-b+1])
-            print("")
-            nb_prev = nb_curr
+    if "?" in text or "." in text or ":" in text:
+        ix_prev = 0
+        for ix, ch in enumerate(text):
+            if ch in (".", "?", ":"):
+                print(text[ix_prev:ix+1].strip(" "))
+                print("")
+                ix_prev = ix + 1
+                continue
+        print(text[ix_prev:].strip(" "), end="")
+    else:
+        print(text.strip(" "), end="")
