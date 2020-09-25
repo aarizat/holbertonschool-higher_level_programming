@@ -15,7 +15,7 @@ def matrix_divided(matrix, div):
     Return:
        new_matrix (list): list of list with all elements of matrix divide by div
     """
-    if not isinstance(matrix, list):
+    if not isinstance(matrix, list) or not len(matrix):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     for row in matrix:
         if not isinstance(row, list):
