@@ -1,0 +1,93 @@
+Import module
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Tests cases:
+===========
+
+T1 -- passing zero arguments
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+T2 -- passing m_a as None
+>>> lazy_matrix_mul(None, [[1, 2]])
+Traceback (most recent call last):
+...
+TypeError: Object arrays are not currently supported
+
+T3 -- passing m_b as None
+>>> lazy_matrix_mul([[1, 2]], None)
+Traceback (most recent call last):
+...
+TypeError: Object arrays are not currently supported
+
+T4 -- passing m_a as empty list.
+>>> lazy_matrix_mul([], [[1, 2]])
+Traceback (most recent call last):
+...
+ValueError: shapes (0,) and (1,2) not aligned: 0 (dim 0) != 1 (dim 0)
+
+T5 -- passing m_b as empty list.
+>>> lazy_matrix_mul([[1, 2]], [])
+Traceback (most recent call last):
+...
+ValueError: shapes (1,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+
+T6 -- passing m_a as list of numbers.
+>>> lazy_matrix_mul([1, 2], [[1, 2]])
+Traceback (most recent call last):
+...
+ValueError: shapes (2,) and (1,2) not aligned: 2 (dim 0) != 1 (dim 0)
+
+T7 -- passing m_b as list of numbers.
+>>> lazy_matrix_mul([[1, 2]], [1, 2])
+array([5])
+
+T8 -- passing m_a strings.
+>>> lazy_matrix_mul([[1, "2"]], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: invalid data type for einsum
+
+T9 -- passing m_b strings.
+>>> lazy_matrix_mul([[1, 2]], [[3, "4"], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: invalid data type for einsum
+
+T10 -- passing m_a strings.
+>>> lazy_matrix_mul([[1, 2], [1, 2, 3]], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+ValueError: setting an array element with a sequence.
+
+T11 -- passing m_a strings.
+>>> lazy_matrix_mul([[1, 2], [1, 3]], [[3, 4, 5], [5, 6]])
+Traceback (most recent call last):
+...
+ValueError: setting an array element with a sequence.
+
+T12 -- passing m_a strings.
+>>> lazy_matrix_mul([[1, 2], [1, 3]], [[3, 4], [5, 6], [7, 8]])
+Traceback (most recent call last):
+...
+ValueError: shapes (2,2) and (3,2) not aligned: 2 (dim 1) != 3 (dim 0)
+
+T13 -- passing m_a strings.
+>>> lazy_matrix_mul([[1, 2]], [[3, 4], [float("inf"), float("inf")]])
+array([[inf, inf]])
+
+T14 -- passing m_a strings.
+>>> lazy_matrix_mul([[0, 0]], [[0, 0], [0, 0]])
+array([[0, 0]])
+
+T14 -- passing m_a strings.
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+
+T14 -- passing m_a strings.
+>>> print(lazy_matrix_mul([[1.5, 2.5], [3.5, 4.5]], [[1.5, 2.5], [3.5, 4.5]]))
+[[11. 15.]
+ [21. 29.]]
