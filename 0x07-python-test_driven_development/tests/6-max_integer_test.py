@@ -27,6 +27,7 @@ class TestMaxInteger(unittest.TestCase):
     def test_str(self):
         self.assertEqual(max_integer(["Hi", "Hello"]), "Hi")
         self.assertEqual(max_integer("Hi"), "i")
+        self.assertEqual(max_integer(""), None)
 
 if __name__ == '__main__':
         unittest.main()
