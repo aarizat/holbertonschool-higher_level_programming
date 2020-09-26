@@ -1,0 +1,85 @@
+Import module
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Tests cases:
+===========
+
+T1 -- passing zero arguments
+>>> matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+T2 -- passing m_a as None
+>>> matrix_mul(None, [[1, 2]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+
+T3 -- passing m_b as None
+>>> matrix_mul([[1, 2]], None)
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+
+T4 -- passing m_a as empty list.
+>>> matrix_mul([], [[1, 2]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+T5 -- passing m_b as empty list.
+>>> matrix_mul([[1, 2]], [])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+T6 -- passing m_a as list of numbers.
+>>> matrix_mul([1, 2], [[1, 2]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
+
+T7 -- passing m_b as list of numbers.
+>>> matrix_mul([[1, 2]], [1, 2])
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+
+T8 -- passing m_a strings.
+>>> matrix_mul([[1, "2"]], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_a should contain only integers or floats
+
+T9 -- passing m_b strings.
+>>> matrix_mul([[1, 2]], [[3, "4"], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+
+T10 -- passing m_a strings.
+>>> matrix_mul([[1, 2], [1, 2, 3]], [[3, 4], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+
+T11 -- passing m_a strings.
+>>> matrix_mul([[1, 2], [1, 3]], [[3, 4, 5], [5, 6]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_b must be of the same size
+
+T12 -- passing m_a strings.
+>>> matrix_mul([[1, 2], [1, 3]], [[3, 4], [5, 6], [7, 8]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+
+T13 -- passing m_a strings.
+>>> matrix_mul([[1, 2]], [[3, 4], [float("inf"), float("inf")]])
+[[inf, inf]]
+
+T14 -- passing m_a strings.
+>>> matrix_mul([[0, 0]], [[0, 0], [0, 0]])
+[[0, 0]]
