@@ -1,0 +1,49 @@
+Import module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Tests cases:
+===========
+
+T1 -- passing zero arguments.
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+T2 -- passing a empty string
+>>> text_indentation("")
+
+T3 -- passing a empty string
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+T4 -- passing a string
+>>> text_indentation("Hi")
+Hi
+
+T5 -- passing None
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+T6 -- passing a number
+>>> text_indentation(50)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+T7 -- passing a text
+>>> text_indentation("Hi. How are you?  Well: We are testing")
+Hi.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Well:
+<BLANKLINE>
+We are testing
