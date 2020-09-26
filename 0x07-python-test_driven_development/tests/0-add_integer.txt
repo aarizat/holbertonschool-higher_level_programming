@@ -1,0 +1,74 @@
+Import module
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Tests cases:
+
+T1 -- Passing zero arguments
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+T2 -- Passing None for both arguments.
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+T3 -- Add none and one integer
+>>> add_integer(None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+T4 -- Add two integers
+>>> add_integer(2)
+100
+
+T5 -- Add two inetegers
+>>> add_integer(5, 5)
+10
+
+T6 -- Add one float and one integer
+>>> add_integer(15.5, 5)
+20
+
+T7 -- Add two floats.
+>>> add_integer(5.8, 5.8)
+10
+
+T8 - Add one int and a float
+>>> add_integer("Hi")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+T9 -- Add one int and one string
+>>> add_integer(10, "hi")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+T10 -- add infinity number
+>>> add_integer(10, float("inf"))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+
+T11 -- Add nan
+>>> add_integer(10, float("NaN"))
+Traceback (most recent call last):
+...
+ValueError: cannot convert float NaN to integer
+
+T12 -- Add complex number
+>>> add_integer(3+5j, 4 + 1j)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+T13 -- passing more than argument
+>>> add_integer(10, 20, 40)
+Traceback (most recent call last):
+...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
