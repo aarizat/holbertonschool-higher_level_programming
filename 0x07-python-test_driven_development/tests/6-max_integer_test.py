@@ -18,8 +18,6 @@ class TestMaxInteger(unittest.TestCase):
         self.assertTrue(max_integer([True, False, True]), True)
 
     def test_str(self):
-        self.assertEqual(max_integer(["Hi"]), "Hi")
-
-
-if __name__ == '__main__':
-    unittest.main()
+        self.assertEqual(max_integer(["Hi", "Hello"]), "Hi")
+        self.assertEqual(max_integer("Hi"), "i")
+ 
