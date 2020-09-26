@@ -1,0 +1,43 @@
+Import module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Tests cases:
+===========
+
+T1 -- passing zero arguments.
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+T2 -- passing first name as none
+>>> say_my_name(None)
+Traceback (most recent call last):
+..
+TypeError: first_name must be a string
+
+T3 -- passing only first argument a string
+>>> say_my_name("Andres")
+My name is Andres 
+
+T4 -- passing two string
+>>> say_my_name("Andres", "Ariza")
+My name is Andres Ariza
+
+T5 -- passing empty strings
+>>> say_my_name("")
+My name is  
+
+T6 -- passing first name as empty string
+>>> say_my_name("", "Ariza")
+My name is  Ariza
+
+T6 -- passing number as arguments
+>>> say_my_name(5, "Ariza")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+T7 -- passing number as arguments
+>>> say_my_name("  ", "  ")
+My name is      
