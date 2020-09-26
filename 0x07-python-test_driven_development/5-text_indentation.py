@@ -20,7 +20,9 @@ def text_indentation(text):
         ix_prev = 0
         for ix, ch in enumerate(text):
             if ch in (".", "?", ":"):
-                print(text[ix_prev:ix+1].strip(" "))
+                sentence = text[ix_prev:ix+1].split("\n")
+                for s in sentence:
+                    print(s.strip(" "))
                 print("")
                 ix_prev = ix + 1
                 continue
