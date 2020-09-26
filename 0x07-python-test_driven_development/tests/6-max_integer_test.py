@@ -20,6 +20,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([10, 10, 10]), 10)
         self.assertEqual(max_integer([2.5, 1.6, 10.8]), 10.8)
         self.assertEqual(max_integer([2, 1.6, 10.8, 20]), 20)
+        self.assertEqual(max_integer([4, 5, 50, 6, 8]), 50)
 
     def test_bool(self):
         self.assertTrue(max_integer([True, False, True]), True)
