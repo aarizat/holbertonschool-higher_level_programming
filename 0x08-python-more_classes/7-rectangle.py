@@ -16,7 +16,7 @@ class Rectangle:
         """Init rectangle objects"""
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -59,8 +59,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
         for _ in range(self.__height - 1):
-            print(self.print_symbol * self.__width)
-        print(self.print_symbol * self.__width, end="")
+            print(str(self.print_symbol) * self.__width)
+        print(str(self.print_symbol) * self.__width, end="")
         return ""
 
     def __repr__(self):
@@ -68,5 +68,5 @@ class Rectangle:
 
     def __del__(self):
         """Print a message every time that a rectangle object is eliminated"""
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
