@@ -5,12 +5,12 @@ Module to create a rectangle class.
 
 
 class Rectangle:
-    number_of_instances = 0
-    print_symbol = "#"
-
     """
     The instance of this class creates Rectangle objects.
     """
+
+    number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Init rectangle objects"""
@@ -59,8 +59,8 @@ class Rectangle:
         if self.__height == 0 or self.__width == 0:
             return ""
         for _ in range(self.__height - 1):
-            print(self.print_symbol * self.__width)
-        print(self.print_symbol * self.__width, end="")
+            print(str(self.print_symbol) * self.__width)
+        print(str(self.print_symbol) * self.__width, end="")
         return ""
 
     def __repr__(self):
