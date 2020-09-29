@@ -59,7 +59,7 @@ class Rectangle:
     def __str__(self):
         """Print the rectangle with # character"""
         if self.__height == 0 or self.__width == 0:
-                        return ""
+            return ""
         for _ in range(self.__height - 1):
             print('#' * self.__width)
         print('#' * self.__width, end="")
