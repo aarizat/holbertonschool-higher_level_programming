@@ -1,0 +1,32 @@
+Import module
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Tests cases:
+
+T1-- correct parameters
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("width", 89)
+
+T2-- Both strings
+>>> bg.integer_validator("width", "width")
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+T3-- Argument zero
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
+
+T4-- without arguments.
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+T5-- negative argument.
+>>> bg.integer_validator("width", -5)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
