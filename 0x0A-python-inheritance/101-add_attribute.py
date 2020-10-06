@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Fuction to add attributes
+"""
 
 
 def add_attribute(obj, name, value):
