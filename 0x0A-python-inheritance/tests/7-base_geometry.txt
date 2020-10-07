@@ -1,52 +1,52 @@
-Tests Cases
-===========
+Test cases
+==========
 
 Import module
-
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> base_geometry = BaseGeometry()
+>>> bg = BaseGeometry()
 
->>> base_geometry.integer_validator("Int", 2)
->>> base_geometry.integer_validator("Negative", -1)
+>>> bg.integer_validator("Hi", 2)
+>>> bg.integer_validator("Hi", -1)
 Traceback (most recent call last):
 ...
-ValueError: Negative must be greater than 0
+ValueError: Hi must be greater than 0
 
->>> base_geometry.integer_validator("String", "test")
+>>> bg.integer_validator("Hi", "Hola")
 Traceback (most recent call last):
 ...
-TypeError: String must be an integer
+TypeError: Hi must be an integer
 
->>> base_geometry.integer_validator("Zero", 0)
+>>> bg.integer_validator("Hi", 0)
 Traceback (most recent call last):
 ...
-ValueError: Zero must be greater than 0
+ValueError: Hi must be greater than 0
 
->>> base_geometry.integer_validator("List", [1, 2, 3])
+>>> bg.integer_validator("Hi", [0, 2, 20])
 Traceback (most recent call last):
 ...
-TypeError: List must be an integer
+TypeError: Hi must be an integer
 
->>> base_geometry.area()
+>>> bg.area()
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
->>> base_geometry = BaseGeometry(1)
+>>> bg = BaseGeometry(100)
 Traceback (most recent call last):
 ...
 TypeError: object() takes no parameters
 
->>> base_geometry.integer_validator()
+>>> bg.integer_validator()
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> base_geometry.integer_validator("test")
+>>> bg.integer_validator("Hi")
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
->>> base_geometry.integer_validator("test", 1, 2)
+
+>>> bg.integer_validator("Hi", 1, 2)
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
