@@ -7,6 +7,11 @@ T1-- correct parameters
 >>> bg = BaseGeometry()
 >>> bg.integer_validator("width", 89)
 
+>>> bg = BaseGeometry(1)
+Traceback (most recent call last):
+...
+TypeError: object() takes no parameters
+
 T2-- Both strings
 >>> bg.integer_validator("width", "width")
 Traceback (most recent call last):
