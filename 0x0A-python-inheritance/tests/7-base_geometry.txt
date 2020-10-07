@@ -6,12 +6,28 @@ Import module
 >>> bg = BaseGeometry()
 
 >>> bg.integer_validator("Hi", 2)
+
 >>> bg.integer_validator("Hi", -1)
 Traceback (most recent call last):
 ...
 ValueError: Hi must be greater than 0
 
 >>> bg.integer_validator("Hi", "Hola")
+Traceback (most recent call last):
+...
+TypeError: Hi must be an integer
+
+>>> bg.integer_validator("Hi", True)
+Traceback (most recent call last):
+...
+TypeError: Hi must be an integer
+
+>>> bg.integer_validator("Hi", 45.8)
+Traceback (most recent call last):
+...
+TypeError: Hi must be an integer
+
+>>> bg.integer_validator("Hi", (1,))
 Traceback (most recent call last):
 ...
 TypeError: Hi must be an integer
