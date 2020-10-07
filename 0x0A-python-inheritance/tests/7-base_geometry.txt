@@ -55,3 +55,17 @@ TypeError: width must be an integer
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
+
+>>> bg.integer_validator("width", 8.5)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+>>> bg.integer_validator("width", 34, 45)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
