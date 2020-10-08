@@ -12,7 +12,6 @@ def pascal_triangle(n):
         return []
     p_t = [[1]]
     for i in range(2, n+1):
-        p_t.append([sum(p_t[i-2][0:1])])
-        for k in range(0, i-1):
-            p_t[i-1].append(sum(p_t[i-2][k:k+2]))
+        tmp = [0] + p_t[i-2] + [0]
+        p_t.append([sum(par) for par in zip(tmp, tmp[1:])])
     return p_t
