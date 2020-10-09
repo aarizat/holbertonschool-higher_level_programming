@@ -139,3 +139,10 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                                                        self.__y, self.__width,
                                                        self.__height)
+
+    def update(self, *args):
+        key = ['id', '_Rectangle__width', '_Rectangle__height',
+               '_Rectangle__x', '_Rectangle__y']
+        if 0 < len(args) <= 5:
+            for i in range(len(args)):
+                self.__dict__[key[i]] = args[i]
