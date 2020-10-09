@@ -26,7 +26,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         """Retrieve with argument.
@@ -35,7 +35,7 @@ class Rectangle(Base):
             [int]: width of the rectangle.
         """
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """Set the value to width
@@ -48,7 +48,7 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-        
+
     @property
     def height(self):
         """Retrieve height attribute.
@@ -57,7 +57,7 @@ class Rectangle(Base):
             [int]: height value
         """
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """Set the value to height
@@ -79,7 +79,7 @@ class Rectangle(Base):
             [int]: the "x" value.
         """
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """Set the value to "x".
@@ -101,7 +101,7 @@ class Rectangle(Base):
             [int]: The "y" value
         """
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """Set "y" value.
@@ -114,7 +114,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
+
     def area(self):
         """Calculate the area value of the Rectangle instance.
 
