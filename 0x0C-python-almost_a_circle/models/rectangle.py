@@ -126,7 +126,12 @@ class Rectangle(Base):
     def display(self):
         """Print in stdout the Rectangle instance with the # character.
         """
-        print(*['#' * self.width for _ in range(self.__height)], sep='\n')
+        rect_shape = []
+        for _ in range(self.__y):
+            print('')
+        for _ in range(self.__height):
+            rect_shape.append(' ' * self.__x + '#' * self.__width)
+        print(*rect_shape, sep='\n')
 
     def __str__(self):
         """Return representation of a Rectangle instance.
