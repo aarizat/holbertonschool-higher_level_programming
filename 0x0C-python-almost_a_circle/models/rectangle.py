@@ -143,17 +143,22 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update instance attributes.
         """
-        attrs = ['id', '_Rectangle__width', '_Rectangle__height',
-               '_Rectangle__x', '_Rectangle__y']
+        attrs = ['id', 'width', 'height', 'x', 'y']
         if 0 < len(args) <= 5:
             for i in range(len(args)):
-                self.__dict__[attrs[i]] = args[i]
+                super().__setattr__(attrs[i], args[i])
         else:
             for key in kwargs:
-                for attr in attrs:
-                    if key in attr:
-                        self.__dict__[attr] = kwargs[key]
-                        break
+                super().__setattr__(key, kwargs[key])
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle
+        """
+        attrs_dict = {'id': self.id, 'width': self.width,
+                      'height': self.height, 'x': self.x, 'y': self.y}
+        return attrs_dict
+
+        return a
 
 
 
