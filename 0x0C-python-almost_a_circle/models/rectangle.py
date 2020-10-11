@@ -121,24 +121,24 @@ class Rectangle(Base):
         Returns:
             [int]: Area of the rectangle.
         """
-        return self.__height * self.__width
+        return self.height * self.width
 
     def display(self):
         """Print in stdout the Rectangle instance with the # character.
         """
         rect_shape = []
-        for _ in range(self.__y):
+        for _ in range(self.y):
             print('')
-        for _ in range(self.__height):
-            rect_shape.append(' ' * self.__x + '#' * self.__width)
+        for _ in range(self.height):
+            rect_shape.append(' ' * self.x + '#' * self.width)
         print(*rect_shape, sep='\n')
 
     def __str__(self):
         """Return representation of a Rectangle instance.
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                                       self.__y, self.__width,
-                                                       self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
 
     def update(self, *args, **kwargs):
         """Update instance attributes.
@@ -157,9 +157,3 @@ class Rectangle(Base):
         attrs_dict = {'id': self.id, 'width': self.width,
                       'height': self.height, 'x': self.x, 'y': self.y}
         return attrs_dict
-
-        return a
-
-
-
-
