@@ -60,4 +60,3 @@ class Square(Rectangle):
         attrs_dict = {'id': self.id, 'size': self.width,
                       'x': self.x, 'y': self.y}
         return attrs_dict
-
