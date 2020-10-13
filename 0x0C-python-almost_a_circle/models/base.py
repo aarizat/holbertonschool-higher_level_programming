@@ -47,9 +47,12 @@ class Base:
              list_objs (JSON object): JSON representation of list_objs.
         """
         filename = cls.__name__ + '.json'
-        list_dict = [d.to_dictionary() for d in list_objs]
-        objs = cls.to_json_string(list_dict)
         with open(filename, mode='w', encoding='utf-8') as f:
+            if list_objs is None:
+                objs = cls.to_json_string(list())
+            else:
+                list_dict = [d.to_dictionary() for d in list_objs]
+                objs = cls.to_json_string(list_dict)
             f.write(objs)
 
     @staticmethod
