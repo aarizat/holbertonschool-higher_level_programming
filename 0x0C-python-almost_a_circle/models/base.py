@@ -2,6 +2,7 @@
 """
 Define Base class.
 """
+import turtle
 import json
 import os
 
@@ -90,6 +91,64 @@ class Base:
                 obj_insts.append(cls.create(**d))
             return obj_insts
 
-    def save_to_file_csv(cls, list_objs): and def load_from_file_csv(cls):
-        pass
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save python object to csv file.
 
+        Args:
+            list_objs (list): list of dicts.
+        """
+        filename = cls.__name__ + '.csv'
+        list_dicts = [obj.to_dictionary() for obj in list_objs]
+        with open(filename, mode='w', encoding='utf-8') as file:
+            file.write(cls.to_json_string(list_dicts))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load python objects from csv file.
+
+        Returns:
+            [list]: List of objects.
+        """
+        filename = cls.__name__ + '.csv'
+        list_objs = []
+        if not os.path.isfile(filename):
+            return list_objs
+        with open(filename, mode='r', encoding='utf-8') as file:
+            list_dicts = cls.from_json_string(file.read())
+            for d in list_dicts:
+                list_objs.append(cls.create(**d))
+            return list_objs
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw rectangles and squares.
+
+        Args:
+            list_rectangles (Rectangle): list of Rectangle objects.
+            list_squares (Square): List of Square objects.
+        """
+        window = turtle.Screen()
+        t = turtle.Turtle()
+        for square in list_squares:
+            x, y = square.x, square.y
+            size = square.size
+            t.penup()
+            t.goto(x, y)
+            t.pendown()
+            for _ in range(4):
+                t.rt(90)
+                t.fd(size)
+        for rect in list_rectangles:
+            x, y = rect.x, rect.y
+            width, height = rect.width, rect.height
+            t.penup()
+            t.goto(x, y)
+            t.pendown()
+            for i in range(4):
+                if not i % 2:
+                    t.rt(90)
+                    t.fd(width)
+                else:
+                    t.rt(90)
+                    t.fd(height)
