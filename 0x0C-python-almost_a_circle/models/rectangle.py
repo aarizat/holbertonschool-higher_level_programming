@@ -144,8 +144,10 @@ class Rectangle(Base):
         """Update instance attributes.
         """
         attrs = ['id', 'width', 'height', 'x', 'y']
-        if 0 < len(args) <= 5:
+        if len(args) > 0:
             for i in range(len(args)):
+                if i == 5:
+                    break
                 super().__setattr__(attrs[i], args[i])
         else:
             for key in kwargs:
