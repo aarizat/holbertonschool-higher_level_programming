@@ -133,25 +133,16 @@ class Base:
         """
         window = turtle.Screen()
         t = turtle.Turtle()
-        for square in list_squares:
-            x, y = square.x, square.y
-            size = square.size
+        polygons = [*list_rectangles, *list_squares]
+        for poly in polygons:
+            w, h = poly.width, poly.height
             t.penup()
-            t.goto(x, y)
-            t.pendown()
-            for _ in range(4):
-                t.rt(90)
-                t.fd(size)
-        for rect in list_rectangles:
-            x, y = rect.x, rect.y
-            width, height = rect.width, rect.height
-            t.penup()
-            t.goto(x, y)
+            t.goto(poly.x, poly.y)
             t.pendown()
             for i in range(4):
                 if not i % 2:
                     t.rt(90)
-                    t.fd(width)
+                    t.fd(w)
                 else:
                     t.rt(90)
-                    t.fd(height)
+                    t.fd(h)
