@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Unit testing for Base class"""
+
+
 import os
 import json
 import unittest
@@ -18,34 +20,34 @@ class TestBase(unittest.TestCase):
         base2 = Base()
         self.assertEqual(base2.id, 2)
 
-    def test_one_arg(self):
-        """[summary]
-        """
-        base1 = Base(2)
-        base2 = Base(2)
-        self.assertEqual(base2.id, base1.id)
+    # def test_one_arg(self):
+    #     """[summary]
+    #     """
+    #     base1 = Base(2)
+    #     base2 = Base(2)
+    #     self.assertEqual(base2.id, base1.id)
 
-    def test_more_args(self):
-        """[summary]
-        """
-        with self.assertRaises(TypeError):
-            Base(1, 2, 3)
+    # def test_more_args(self):
+    #     """[summary]
+    #     """
+    #     with self.assertRaises(TypeError):
+    #         Base(1, 2, 3)
 
-    def test_types(self):
-        """[summary]
-        """
-        self.assertEqual([1, 2], Base([1, 2]).id)
-        self.assertEqual((1, 2), Base((1, 2)).id)
-        self.assertEqual(True, Base(True).id)
-        self.assertEqual({1, 2, 3}, Base({1, 2, 3}).id)
-        self.assertEqual({'a': 1, 'b': 2}, Base({'a': 1, 'b': 2}).id)
-        self.assertEqual('Nan', Base('Nan').id)
-        self.assertEqual(-10, Base(-10).id)
-        self.assertEqual(0, Base(0).id)
-        self.assertEqual('Hi', Base('Hi').id)
-        self.assertEqual(5.5, Base(5.5).id)
-        self.assertEqual(complex(1), Base(complex(1)).id)
-        self.assertEqual(float('inf'), Base(float('inf')).id)
+    # def test_types(self):
+    #     """[summary]
+    #     """
+    #     self.assertEqual([1, 2], Base([1, 2]).id)
+    #     self.assertEqual((1, 2), Base((1, 2)).id)
+    #     self.assertEqual(True, Base(True).id)
+    #     self.assertEqual({1, 2, 3}, Base({1, 2, 3}).id)
+    #     self.assertEqual({'a': 1, 'b': 2}, Base({'a': 1, 'b': 2}).id)
+    #     self.assertEqual('Nan', Base('Nan').id)
+    #     self.assertEqual(-10, Base(-10).id)
+    #     self.assertEqual(0, Base(0).id)
+    #     self.assertEqual('Hi', Base('Hi').id)
+    #     self.assertEqual(5.5, Base(5.5).id)
+    #     self.assertEqual(complex(1), Base(complex(1)).id)
+    #     self.assertEqual(float('inf'), Base(float('inf')).id)
 
 
 # class Test_Base_to_json_string(unittest.TestCase):

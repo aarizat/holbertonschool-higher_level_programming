@@ -1,2 +1,19 @@
 #!/usr/bin/python3
-"Test cases fot square class"
+""" Unit testing for Base class"""
+
+
+import os
+import json
+import unittest
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
+
+
+class TestSquare(unittest.TestCase):
+    """[summary]
+
+    Args:
+        unittest ([type]): [description]
+    """
+    pass
