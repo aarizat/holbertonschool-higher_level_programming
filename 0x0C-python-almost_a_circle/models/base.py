@@ -132,9 +132,14 @@ class Base:
             list_squares (Square): List of Square objects.
         """
         window = turtle.Screen()
+        window.title("Draw Squares and Rectangles")
+        window.bgcolor("light blue")
         t = turtle.Turtle()
+        t.pencolor("red")
         polygons = [*list_rectangles, *list_squares]
         for poly in polygons:
+            t.fillcolor("green")
+            t.begin_fill()
             w, h = poly.width, poly.height
             t.penup()
             t.goto(poly.x, poly.y)
@@ -146,3 +151,5 @@ class Base:
                 else:
                     t.rt(90)
                     t.fd(h)
+            t.end_fill()
+        turtle.mainloop()
