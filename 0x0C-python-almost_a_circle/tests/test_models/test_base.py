@@ -8,7 +8,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class Test_Base_id(unittest.TestCase):
+class TestBase(unittest.TestCase):
     """Unit testing for Base class.
     """
     def test_zero_args(self):
