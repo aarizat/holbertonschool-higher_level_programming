@@ -13,7 +13,7 @@ if __name__ == "__main__":
     with db.cursor() as cur:
         cur.execute('''
                     SELECT * FROM states
-                    WHERE name='{name}'
+                    WHERE BINARY name='{name}'
                     ORDER BY id
                     '''.format(name=sys.argv[4]))
         [print(s) for s in cur.fetchall()]
