@@ -14,6 +14,5 @@ if __name__ == '__main__':
     with db.cursor() as cur:
         cur.execute('''
                     SELECT * FROM states
-                    WHERE BINARY name='{name}'
-                    ORDER BY id ASC'''.format(name=sys.argv[4],))
-        [print(s) for s in cur.fetchall()]
+                    ORDER BY id ASC''')
+        [print(s) for s in cur.fetchall() if s[1] == sys.argv[4]]
