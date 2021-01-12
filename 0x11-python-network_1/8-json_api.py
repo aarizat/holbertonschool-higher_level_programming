@@ -9,7 +9,7 @@ import requests
 
 if __name__ == "__main__":
     data = {"q": "" if len(sys.argv) == 1 else sys.argv[1]}
-    req = requests.post("http://0.0.0.0:5000/search_user", data)
+    req = requests.post("http://0.0.0.0:5000/search_user", data=data)
     try:
         r = req.json()
         if not r:
