@@ -7,9 +7,12 @@ import requests
 
 
 if __name__ == "__main__":
-    path = "{}/{}".format(sys.argv[1], sys.argv[2])
-    r = requests.get("https://api.github.com/repos/{0}/commits".format(path))
+    r = requests.get("https://api.github.com/repos/{}/{}/commits".
+                     format(sys.argv[1], sys.argv[2]))
     commits = r.json()
-    for i in range(0, 10):
-        print("{}: {}".format(commits[i].get(
-            "sha"), commits[i].get("commit").get("author").get("name")))
+    try:
+        for i in range(0, 10):
+            print("{}: {}".format(commits[i].get(
+                "sha"), commits[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
