@@ -1,3 +1,9 @@
+<p align="center">
+     <p align="center">
+          <img src="https://www.holbertonschool.com/holberton-logo.png" width="360"/>
+     </p>
+
+
 # Higher-level programming - Python, Databases & JavaScript
 
 This repository contains projects related to the higher-level programming track
@@ -40,10 +46,18 @@ following command:
 git clone git@github.com:aarizat/holbertonschool-higher_level_programming.git
 ```
 
-## Author
 
-### Andres Ariza-Triana
-
-- [**Github**](https://github.com/aarizat)
-- [**Linkedin**](https://www.linkedin.com/in/aarizatr/)
-- [**Twitter**](https://twitter.com/aarizatr)
+<p align="center">
+    <h2 align="center">By, Andres Ariza-Triana</h2>
+      <p align="center">
+        <a href="https://twitter.com/aarizatr" target="_blank">
+            <img alt="twitter_page" src="https://raw.githubusercontent.com/EckoJuan/Readme_template/master/images/twitter.png" style="float: center; margin-right: 10px" height="50" width="50">
+        </a>
+        <a href="https://www.linkedin.com/in/aarizatr/" target="_blank">
+            <img alt="linkedin_page" src="https://raw.githubusercontent.com/EckoJuan/Readme_template/master/images/linkedin.png" style="float: center; margin-right: 10px" height="50"  width="50">
+        </a>
+        <a href="https://medium.com/@aarizatr" target="_blank">
+            <img alt="medium_page" src="https://raw.githubusercontent.com/EckoJuan/Readme_template/master/images/medium.png" style="float: center; margin-right: 10px" height="50" width="50">
+        </a>
+      </p>
+</p>
