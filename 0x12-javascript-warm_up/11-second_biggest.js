@@ -4,7 +4,6 @@ if (arr.length === 0 || arr.length === 1) {
   console.log(0);
 } else {
   arr.map(Number);
-  const uniq = [...new Set(arr)];
-  uniq.sort();
-  console.log(uniq[uniq.length - 2]);
+  arr.sort();
+  console.log(arr[arr.length - 2]);
 }
