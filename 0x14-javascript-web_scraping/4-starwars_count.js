@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const request = require('request');
-request('https://swapi-api.hbtn.io/api/films/', (err, res, body) => {
+request(process.argv[2], (err, res, body) => {
   if (err) return;
   const list = JSON.parse(body).results;
   let count = 0;
