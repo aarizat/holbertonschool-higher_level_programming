@@ -5,8 +5,10 @@ request(process.argv[2], (err, res, body) => {
   const list = JSON.parse(body).results;
   let count = 0;
   for (let i = 0; i < list.length; i++) {
-    if (list[i].characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-      count++;
+    for (let j = 0; j < list[i].characters.length; j++) {
+      if (list[i].characters[j].includes('18')) {
+        count++;
+      }
     }
   }
   console.log(count);
